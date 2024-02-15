@@ -1,6 +1,8 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import './navbar.scss';
+import { motion } from 'framer-motion';
 
 type Navlist = {
   name: string;
@@ -30,6 +32,33 @@ const navlist: Navlist[] = [
   },
 ];
 
+const navlistVariants = {
+  hidden: {
+    opacity: 0,
+    x: -20,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const listItemVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+  },
+  hover: {
+    y: -5,
+  },
+};
+
 const Navbar = () => {
   return (
     <nav className='navbar'>
@@ -47,13 +76,27 @@ const Navbar = () => {
           alt='logo'
         />
       </Link>
-      <ul className='navbar__list'>
+      <motion.ul
+        className='navbar__list'
+        variants={navlistVariants}
+        initial='hidden'
+        animate='show'
+      >
         {navlist.map((nav) => (
-          <li key={nav.name}>
-            <a href={nav.link}>{nav.name}</a>
-          </li>
+          <motion.li
+            key={nav.name}
+            variants={listItemVariants}
+          >
+            <motion.a
+              variants={listItemVariants}
+              whileHover='hover'
+              href={nav.link}
+            >
+              {nav.name}
+            </motion.a>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
       <a
         href='#'
         className='navbar__cta'
