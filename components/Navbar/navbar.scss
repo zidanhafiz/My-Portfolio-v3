@@ -1,0 +1,132 @@
+@import '/app/variables';
+
+.navbar {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 0.4fr 0.5fr 2fr;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .navbar__toggle-btn {
+    font-size: 2.5rem;
+    cursor: pointer;
+    width: fit-content;
+
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .navbar__close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    width: fit-content;
+    align-self: end;
+  }
+
+  .navbar__logo {
+    min-width: 10%;
+
+    .navbar__logo-img {
+      width: 40px;
+      height: 40px;
+
+      @media (min-width: $breakpoint-md) {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  .navbar__list--mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    width: 300px;
+    color: black;
+
+    li {
+      list-style: none;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        font-weight: 600;
+        padding: 8px 0;
+        border-bottom: 1px solid transparent;
+      }
+
+      a:hover {
+        border-bottom: 1px solid black;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .navbar__list--desktop {
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      position: unset;
+      flex-direction: row;
+      background-color: transparent;
+      gap: 3.5rem;
+      width: fit-content;
+      padding: 0;
+      color: inherit;
+
+      li {
+        list-style: none;
+        text-align: center;
+
+        a {
+          display: inline-block;
+          padding: 8px 0;
+          border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+  }
+
+  .navbar__cta {
+    background-color: $yellow;
+    padding: 10px 16px;
+    border-radius: 2rem;
+    text-align: center;
+    color: #000;
+    font-weight: 500;
+    justify-self: end;
+    transition: 0.3s;
+    min-width: 10%;
+  }
+  .navbar__cta:hover {
+    background-color: #b9b60e;
+  }
+}
