@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar/Navbar';
-import Hero from './components/Hero';
+import Hero from './components/Hero/Hero';
 import styles from './page.module.scss';
 
 export default function Home() {
