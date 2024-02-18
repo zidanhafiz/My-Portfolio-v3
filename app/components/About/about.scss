@@ -1,0 +1,61 @@
+@import '../../variables.scss';
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(4, 15, 22, 1) 0%, rgba(26, 38, 46, 1) 80%);
+
+  .about__text {
+    line-height: 2rem;
+    max-width: 1024px;
+    text-align: center;
+    padding-bottom: 5rem;
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      @media (min-width: $breakpoint-md) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .about__forest {
+    background: url('/forest.png') bottom right/180% auto no-repeat;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 550px;
+    z-index: 3;
+
+    @media (min-width: $breakpoint-md) {
+      background-size: cover;
+    }
+  }
+
+  .about__moon {
+    background: url('/moon.png') top center/100px auto no-repeat;
+    position: absolute;
+    top: 13%;
+    left: 8%;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+
+    @media (min-width: $breakpoint-md) {
+      top: 16%;
+      left: 18%;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

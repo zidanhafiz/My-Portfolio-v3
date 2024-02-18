@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import styles from './page.module.scss';
+import About from './components/About/About';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <Hero />
-        <section>About</section>
+        <About />
         <section>Skills</section>
         <section>Project</section>
         <section>Contact</section>
