@@ -119,34 +119,36 @@ const SosmedList = () => {
 
 const SliderList = () => {
   return (
-    <motion.div
-      className='hero__slider'
-      variants={sliderVariants}
-      initial='first'
-      animate='slide'
-      transition={{
-        duration: 30,
-        repeat: Infinity,
-        repeatType: 'reverse',
-      }}
-    >
-      {sliderList.map((list) => (
-        <span
-          key={list.name}
-          className='slider__list'
-        >
-          {list.icon()} {list.name}
-        </span>
-      ))}
-      {sliderList.map((list) => (
-        <span
-          key={list.name}
-          className='slider__list'
-        >
-          {list.icon()} {list.name}
-        </span>
-      ))}
-    </motion.div>
+    <div className='hero__slider-container'>
+      <motion.div
+        className='hero__slider'
+        variants={sliderVariants}
+        initial='first'
+        animate='slide'
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
+      >
+        {sliderList.map((list) => (
+          <span
+            key={list.name}
+            className='slider__list'
+          >
+            {list.icon()} {list.name}
+          </span>
+        ))}
+        {sliderList.map((list) => (
+          <span
+            key={list.name}
+            className='slider__list'
+          >
+            {list.icon()} {list.name}
+          </span>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 

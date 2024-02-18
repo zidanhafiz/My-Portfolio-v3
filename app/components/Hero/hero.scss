@@ -115,25 +115,30 @@
     }
   }
 
-  .hero__slider {
-    display: flex;
-    gap: 3rem;
-    font-size: 32px;
+  .hero__slider-container {
+    max-width: 1920px;
+    width: 100vw;
+    overflow: hidden;
     position: absolute;
     bottom: 3rem;
-    left: -20rem;
-    font-weight: 700;
-    opacity: 0.3;
-    cursor: default;
-    @media (min-width: $breakpoint-md) {
-      bottom: 5rem;
-      font-size: 52px;
-    }
 
-    .slider__list {
+    .hero__slider {
       display: flex;
-      align-items: center;
-      gap: 1rem;
+      gap: 3rem;
+      font-size: 32px;
+      font-weight: 700;
+      opacity: 0.3;
+      cursor: default;
+      @media (min-width: $breakpoint-md) {
+        bottom: 5rem;
+        font-size: 48px;
+      }
+
+      .slider__list {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
     }
   }
 }
