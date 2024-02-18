@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import './navbar.scss';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import ToggleBtn from './ToggleBtn';
 import { useState } from 'react';
 import CloseBtn from './CloseBtn';
@@ -70,11 +70,25 @@ const sidebarVariants = {
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+
+  const bNav = useTransform(scrollY, [0, 70], ['rgba(3,14,20,0)', 'rgba(3,14,20,1)']);
+  const sNav = useTransform(
+    scrollY,
+    [0, 70],
+    ['0 0 0 rgba(0, 0, 0, 0.1)', '0 0 20px rgba(0, 0, 0, 0.1)']
+  );
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <nav className='navbar'>
+    <motion.nav
+      className='navbar'
+      variants={listItemVariants}
+      initial='hidden'
+      animate='show'
+      style={{ backgroundColor: bNav, boxShadow: sNav }}
+    >
       <ToggleBtn handleOpen={handleOpen} />
       <Link
         href='/'
@@ -113,7 +127,7 @@ const Navbar = () => {
       >
         See My CV
       </a>
-    </nav>
+    </motion.nav>
   );
 };
 
