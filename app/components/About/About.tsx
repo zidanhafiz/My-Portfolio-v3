@@ -1,8 +1,8 @@
 'use client';
-import { righteous } from '@/utils/fonts';
 import './about.scss';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Heading from '@/components/Heading/Heading';
 
 const aboutVariants = {
   hidden: {
@@ -45,12 +45,12 @@ const About = () => {
         className='about__text'
         style={{ y: yText, opacity: oText }}
       >
-        <motion.h2
-          className={`${righteous.className}`}
+        <Heading
+          type='h2'
           variants={aboutVariants}
         >
           ABOUT ME
-        </motion.h2>
+        </Heading>
         <motion.p variants={aboutVariants}>
           I&apos;m a frontend-focused web developer specializing in React.js, crafting
           intuitive and responsive interfaces. I&apos;m experienced in both backend and
