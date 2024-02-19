@@ -10,16 +10,18 @@
     flex-wrap: wrap-reverse;
     position: relative;
   }
-  padding: 3rem 1rem;
+  padding: 6rem 1rem;
+  min-height: 100vh;
+  height: max-content;
   margin: 0 auto;
   max-width: $maxwidth-md;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column-reverse;
   gap: 3rem;
   text-align: center;
+  position: relative;
 
   .hero__section--a {
     .hero__text:nth-child(1) {
@@ -46,7 +48,7 @@
     }
 
     .hero__buttons {
-      margin: 2.6rem 0 4rem;
+      margin: 2.6rem 0 3rem;
       display: flex;
       gap: 1.5rem;
       justify-content: center;
@@ -120,7 +122,10 @@
     width: 100vw;
     overflow: hidden;
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
+    @media (min-width: $breakpoint-md) {
+      bottom: 5rem;
+    }
 
     .hero__slider {
       display: flex;
@@ -130,7 +135,6 @@
       opacity: 0.3;
       cursor: default;
       @media (min-width: $breakpoint-md) {
-        bottom: 5rem;
         font-size: 48px;
       }
 
