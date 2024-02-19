@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import styles from './page.module.scss';
 import About from './components/About/About';
+import Skills from './components/Skills/Skills';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <main className={styles.main}>
         <Hero />
         <About />
-        <section>Skills</section>
+        <Skills />
         <section>Project</section>
         <section>Contact</section>
       </main>
