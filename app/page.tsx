@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero';
 import styles from './page.module.scss';
 import About from './components/About/About';
 import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        <section>Project</section>
+        <Projects />
         <section>Contact</section>
       </main>
     </>

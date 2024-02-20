@@ -1,0 +1,72 @@
+@import '../../variables.scss';
+
+.card {
+  background: $dark-700;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 2rem #0000006d;
+  border: 1px solid #a6a6a63f;
+
+  .card__img-container {
+    max-height: 230px;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-md) {
+      height: 300px;
+    }
+  }
+  .card__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card__desc {
+    margin: 1.2rem 1rem 1.8rem;
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .card__btn--group {
+      margin-top: 24px;
+      display: flex;
+      gap: 0.7rem;
+      justify-content: end;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 16px;
+        border-radius: 1rem;
+        font-weight: 500;
+
+        &:nth-child(1) {
+          background-color: transparent;
+          border: 1px solid #fff;
+          color: #fff;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: #fff;
+            color: #000;
+          }
+        }
+
+        &:nth-child(2) {
+          border: 1px solid transparent;
+          background-color: $yellow;
+          transition: 0.3s;
+          color: #000;
+
+          &:hover {
+            border: 1px solid #fff;
+            background-color: $yellow-700;
+          }
+        }
+      }
+    }
+  }
+}
