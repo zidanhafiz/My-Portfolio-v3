@@ -17,7 +17,9 @@ const Heading = ({
 
   return (
     <motion.div
-      variants={variants}
+      variants={variants && variants}
+      initial='hidden'
+      whileInView='show'
       className={`${righteous.className} heading`}
     >
       {Component}

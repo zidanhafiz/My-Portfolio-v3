@@ -2,44 +2,50 @@ import Image from 'next/image';
 import './card.scss';
 import { IoCodeSlash } from 'react-icons/io5';
 import { MdOpenInNew } from 'react-icons/md';
+import { DocumentData } from 'firebase/firestore';
+import { Variants, motion } from 'framer-motion';
 
-type CardProps = {
-  name: string;
-  desc: string;
-  sourceCode?: string;
-  link: string;
-  img: string;
-};
+const Card = ({ data, variants }: { data: DocumentData; variants?: Variants }) => {
+  const { imgSrc, title, description, sourceCode, link } = data;
 
-const Card = ({ data }: { data: CardProps }) => {
-  const { img, name, desc, sourceCode, link } = data;
   return (
-    <div className='card'>
+    <motion.div
+      className='card'
+      variants={variants}
+    >
       <div className='card__img-container'>
         <Image
           className='card__img'
-          src={img}
+          src={imgSrc}
           width={1000}
           height={1000}
-          alt={name}
+          alt={title}
         />
       </div>
       <div className='card__desc'>
-        <h3>{name}</h3>
-        <p>{desc}</p>
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
         <div className='card__btn--group'>
           {sourceCode && (
-            <a href={sourceCode}>
+            <a
+              href={sourceCode}
+              target='_blank'
+            >
               <IoCodeSlash /> Source Code
             </a>
           )}
-          <a href={link}>
+          <a
+            href={link}
+            target='_blank'
+          >
             <MdOpenInNew />
             Visit
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

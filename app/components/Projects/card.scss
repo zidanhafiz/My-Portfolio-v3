@@ -3,37 +3,44 @@
 .card {
   background: $dark-700;
   width: 100%;
-  max-width: 500px;
+  max-width: 580px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 0 2rem #0000006d;
   border: 1px solid #a6a6a63f;
+  max-height: 410px;
 
   .card__img-container {
-    max-height: 230px;
+    max-height: 60%;
     overflow: hidden;
-
-    @media (min-width: $breakpoint-md) {
-      height: 300px;
-    }
   }
+
   .card__img {
     width: 100%;
     height: auto;
   }
 
   .card__desc {
-    margin: 1.2rem 1rem 1.8rem;
+    padding: 1.2rem 1rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-height: 40%;
+    height: 100%;
+    @media (min-width: $breakpoint-md) {
+      padding: 1.5rem 1.5rem 1.7rem;
+    }
 
     h3 {
       margin-bottom: 8px;
     }
 
     .card__btn--group {
-      margin-top: 24px;
       display: flex;
       gap: 0.7rem;
       justify-content: end;
+      align-self: flex-end;
 
       a {
         display: flex;
