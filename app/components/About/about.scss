@@ -1,60 +1,97 @@
 @import '../../variables.scss';
 
 .about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
   background: linear-gradient(180deg, rgba(4, 15, 22, 1) 0%, rgba(26, 38, 46, 1) 80%);
 
-  .about__text {
-    line-height: 2rem;
-    max-width: 1024px;
-    text-align: center;
-    padding-bottom: 5rem;
+  .about__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
 
-    .heading {
-      margin-bottom: 2rem;
-    }
+    .about__text {
+      line-height: 2rem;
+      max-width: 1024px;
+      text-align: center;
+      padding-bottom: 5rem;
 
-    p {
-      font-size: 1rem;
-      @media (min-width: $breakpoint-md) {
-        font-size: 20px;
+      .heading {
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        @media (min-width: $breakpoint-md) {
+          font-size: 20px;
+        }
       }
     }
-  }
 
-  .about__forest {
-    background: url('/forest.png') bottom right/180% auto no-repeat;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 550px;
-    z-index: 3;
+    .about__cloud-1 {
+      background: url('/cloud-1.png') bottom left/100% auto no-repeat;
+      bottom: 10rem;
+      left: -5rem;
+      position: absolute;
+      width: 65%;
+      height: 500px;
+      z-index: 3;
 
-    @media (min-width: $breakpoint-md) {
-      background-size: cover;
+      @media (min-width: $breakpoint-md) {
+        width: 38%;
+        bottom: 10rem;
+        left: 0rem;
+      }
     }
-  }
 
-  .about__moon {
-    background: url('/moon.png') top center/100px auto no-repeat;
-    position: absolute;
-    top: 13%;
-    left: 8%;
-    width: 100px;
-    height: 100px;
-    z-index: 2;
+    .about__cloud-2 {
+      background: url('/cloud-2.png') bottom right/100% auto no-repeat;
+      position: absolute;
+      bottom: 2rem;
+      right: -5rem;
+      width: 80%;
+      height: 600px;
+      z-index: 3;
 
-    @media (min-width: $breakpoint-md) {
-      top: 16%;
-      left: 18%;
+      @media (min-width: $breakpoint-md) {
+        width: 55%;
+        bottom: 2rem;
+        right: -5rem;
+      }
+    }
+
+    .about__cloud-3 {
+      background: url('/cloud-3.png') top right/120px auto no-repeat;
+      position: absolute;
+      top: 9rem;
+      right: 2rem;
+      width: 200px;
+      height: 200px;
+      z-index: 3;
+
+      @media (min-width: $breakpoint-md) {
+        background-size: 180px;
+        top: 11rem;
+        right: 10%;
+      }
+    }
+
+    .about__moon {
+      background: url('/moon.png') top center/100px auto no-repeat;
+      position: absolute;
+      top: 13%;
+      left: 2%;
       width: 150px;
       height: 150px;
+      z-index: 2;
+
+      @media (min-width: $breakpoint-md) {
+        background-size: 150px;
+        top: 16%;
+        left: 18%;
+      }
     }
   }
 }
