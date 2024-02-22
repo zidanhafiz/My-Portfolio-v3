@@ -36,11 +36,13 @@ const Carousel = () => {
       >
         <List totalPage={totalPage} />
       </motion.div>
-      <NavBtn
-        totalPage={totalPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {totalPage !== 1 && (
+        <NavBtn
+          totalPage={totalPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      )}
     </div>
   );
 };

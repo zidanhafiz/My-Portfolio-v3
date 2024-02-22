@@ -1,5 +1,7 @@
+'use client';
 import { Dispatch, SetStateAction } from 'react';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import { motion } from 'framer-motion';
 import './navBtn.scss';
 
 type NavBtnProps = {
@@ -26,7 +28,11 @@ const NavBtn = ({ currentPage, setCurrentPage, totalPage }: NavBtnProps) => {
   };
 
   return (
-    <div className='carousel__container-nav'>
+    <motion.div
+      className='carousel__container-nav'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+    >
       <button onClick={prevBtnHandle}>
         <IoMdArrowDropleft />
       </button>
@@ -42,7 +48,7 @@ const NavBtn = ({ currentPage, setCurrentPage, totalPage }: NavBtnProps) => {
       <button onClick={nextBtnHandle}>
         <IoMdArrowDropright />
       </button>
-    </div>
+    </motion.div>
   );
 };
 

@@ -16,6 +16,8 @@ const projectVariants = {
     opacity: 1,
     transition: {
       duration: 0.7,
+      type: 'spring',
+      stiffness: 80,
       staggerChildren: 0.1,
     },
   },
@@ -26,9 +28,9 @@ const List = ({ totalPage }: { totalPage: number }) => {
 
   return (
     <>
-      {arrTotalPage.map((page) => (
+      {arrTotalPage.map((page, i) => (
         <CardList
-          key={page}
+          key={i}
           page={page}
         />
       ))}
@@ -45,6 +47,8 @@ const CardList = ({ page }: { page: number }) => {
       .catch((err) => console.log(err));
   }, [page]);
 
+  console.log(data);
+
   return (
     <motion.div
       className='carousel__container-list'
@@ -52,7 +56,7 @@ const CardList = ({ page }: { page: number }) => {
       initial='hidden'
       whileInView='show'
     >
-      {data.map((d, i) => (
+      {data.map((d) => (
         <Card
           key={d.id}
           data={d}
