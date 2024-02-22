@@ -69,3 +69,13 @@ export const database: Skills[] = [
     icon: () => <Icon icon='logos:supabase-icon' />,
   },
 ];
+
+export const getAllSkills = () => {
+  const skills: Skills[] = [];
+
+  proLang.map((lang) => skills.push(lang));
+  framework.map((frame) => skills.push(frame));
+  database.map((data) => skills.push(data));
+
+  return skills;
+};

@@ -1,8 +1,7 @@
 'use client';
 import Heading from '@/components/Heading/Heading';
 import './skills.scss';
-import { ReactNode } from 'react';
-import { type Skills, database, framework, proLang } from './SkillList';
+import { type Skills, getAllSkills } from './SkillList';
 import { motion } from 'framer-motion';
 
 const skillsVariant = {
@@ -14,20 +13,21 @@ const skillsVariant = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.7,
+      type: 'spring',
+      stiffness: 100,
       staggerChildren: 0.1,
     },
   },
 };
 
 const Skills = () => {
+  const data = getAllSkills();
+
   return (
-    <motion.section
+    <section
       id='skills'
       className='skills'
-      variants={skillsVariant}
-      initial='hidden'
-      whileInView='show'
     >
       <Heading
         type='h2'
@@ -35,14 +35,12 @@ const Skills = () => {
       >
         MY SKILLS
       </Heading>
-      <SkillList skills={proLang}>Programming Language</SkillList>
-      <SkillList skills={framework}>Framework</SkillList>
-      <SkillList skills={database}>Database</SkillList>
-    </motion.section>
+      <SkillList skills={data} />
+    </section>
   );
 };
 
-const SkillList = ({ children, skills }: { children: ReactNode; skills: Skills[] }) => {
+const SkillList = ({ skills }: { skills: Skills[] }) => {
   return (
     <motion.div
       className='skills__list-container'
@@ -50,7 +48,6 @@ const SkillList = ({ children, skills }: { children: ReactNode; skills: Skills[]
       initial='hidden'
       whileInView='show'
     >
-      <motion.h3 variants={skillsVariant}>{children}</motion.h3>
       <ul className='skills__list-ul'>
         {skills.map((skill) => (
           <motion.li
