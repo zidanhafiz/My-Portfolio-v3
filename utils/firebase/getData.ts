@@ -28,7 +28,7 @@ export const getAllDocumentsByPage = async (page: number) => {
   const data: DocumentData[] = [];
 
   // Get all documents
-  const queryAll = query(collection(db, 'projects'), orderBy('createdAt'));
+  const queryAll = query(collection(db, 'projects'), orderBy('order'));
   const documentSnapshots = await getDocs(queryAll);
 
   // Get the first of visible document
@@ -38,7 +38,7 @@ export const getAllDocumentsByPage = async (page: number) => {
   // Querying the documents which starts with the first of visible document
   const queryPage = query(
     collection(db, 'projects'),
-    orderBy('createdAt'),
+    orderBy('order'),
     limit(4),
     startAt(firstDoc)
   );
@@ -47,6 +47,8 @@ export const getAllDocumentsByPage = async (page: number) => {
   querySnapshot.forEach((doc) => {
     data.push(doc.data());
   });
+
+  console.log(data);
 
   return data;
 };
