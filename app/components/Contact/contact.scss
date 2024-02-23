@@ -1,0 +1,47 @@
+@import '../../variables.scss';
+
+.contact {
+  .contact__container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 800px;
+    width: 100%;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .heading {
+      text-align: center;
+    }
+
+    .contact__list-container {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .contact__divider {
+      margin: 2.3rem 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+
+      .line {
+        width: 100px;
+        height: 2px;
+        background-color: #94949474;
+      }
+
+      span {
+        text-align: center;
+        font-size: 20px;
+        color: #ffffffaf;
+      }
+    }
+  }
+}

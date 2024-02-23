@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.scss';
 import { inter } from '@/utils/fonts';
+import ModalProvider from '@/context/showModal';
 
 export const metadata: Metadata = {
   title: 'Zidan Hafiz Rapiyani | Portfolio',
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ModalProvider>{children}</ModalProvider>
+      </body>
     </html>
   );
 }
