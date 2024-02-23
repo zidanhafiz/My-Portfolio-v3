@@ -33,7 +33,7 @@ const Skills = () => {
         type='h2'
         variants={skillsVariant}
       >
-        MY SKILLS
+        Skills
       </Heading>
       <SkillList skills={data} />
     </section>

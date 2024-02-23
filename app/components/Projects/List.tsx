@@ -28,9 +28,9 @@ const List = ({ totalPage }: { totalPage: number }) => {
 
   return (
     <>
-      {arrTotalPage.map((page, i) => (
+      {arrTotalPage.map((page) => (
         <CardList
-          key={i}
+          key={page}
           page={page}
         />
       ))}
@@ -47,8 +47,6 @@ const CardList = ({ page }: { page: number }) => {
       .catch((err) => console.log(err));
   }, [page]);
 
-  console.log(data);
-
   return (
     <motion.div
       className='carousel__container-list'
@@ -56,9 +54,9 @@ const CardList = ({ page }: { page: number }) => {
       initial='hidden'
       whileInView='show'
     >
-      {data.map((d) => (
+      {data.map((d, i) => (
         <Card
-          key={d.id}
+          key={i}
           data={d}
           variants={projectVariants}
         />
