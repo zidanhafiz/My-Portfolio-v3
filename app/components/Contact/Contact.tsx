@@ -60,7 +60,7 @@ const Contact = () => {
           <span>or</span>
           <div className='line'></div>
         </motion.div>
-        <Form variants={contactVariants}/>
+        <Form variants={contactVariants} />
       </motion.div>
     </section>
   );

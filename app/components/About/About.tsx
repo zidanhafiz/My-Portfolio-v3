@@ -56,7 +56,7 @@ const About = () => {
             type='h2'
             variants={aboutVariants}
           >
-            About Me
+            📜 About Me
           </Heading>
           <motion.p variants={aboutVariants}>
             I&apos;m a frontend-focused web developer specializing in React.js, crafting

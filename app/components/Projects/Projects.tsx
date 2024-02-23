@@ -30,7 +30,7 @@ const Projects = () => {
         type='h2'
         variants={projectVariants}
       >
-        My Projects
+        📂 My Projects
       </Heading>
       <div className='projects__list'>
         <Carousel />
