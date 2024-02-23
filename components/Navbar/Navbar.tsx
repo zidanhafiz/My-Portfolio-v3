@@ -4,8 +4,9 @@ import Link from 'next/link';
 import './navbar.scss';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import ToggleBtn from './ToggleBtn';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CloseBtn from './CloseBtn';
+import { getResume } from '@/utils/firebase/getResume';
 
 type Navlist = {
   name: string;
@@ -70,6 +71,14 @@ const sidebarVariants = {
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [resume, setResume] = useState<string>('');
+
+  useEffect(() => {
+    getResume()
+      .then((url) => setResume(url))
+      .catch((err) => console.log(err));
+  }, []);
+
   const { scrollY } = useScroll();
 
   const bNav = useTransform(scrollY, [0, 70], ['rgba(3,14,20,0)', 'rgba(3,14,20,1)']);
@@ -122,7 +131,8 @@ const Navbar = () => {
         )}
       </AnimatePresence>
       <a
-        href='#'
+        href={resume}
+        target='_blank'
         className='navbar__cta'
       >
         See My CV
