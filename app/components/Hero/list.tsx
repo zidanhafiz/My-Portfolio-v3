@@ -2,7 +2,6 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
-
 import { RiReactjsFill } from 'react-icons/ri';
 import { SiNextdotjs } from 'react-icons/si';
 import { FaNode } from 'react-icons/fa';
@@ -14,7 +13,7 @@ import { SiPrisma } from 'react-icons/si';
 
 export const sosmedList = [
   {
-    link: 'https://facebook.com',
+    link: 'https://facebook.com/hafiz.rofiyani',
     icon: () => <FaFacebookF />,
   },
   {
@@ -22,11 +21,11 @@ export const sosmedList = [
     icon: () => <FaInstagram />,
   },
   {
-    link: 'https://linkedin.com',
+    link: 'https://linkedin.com/in/zidanhafiz',
     icon: () => <FaLinkedin />,
   },
   {
-    link: 'https://github.com',
+    link: 'https://github.com/zidanhafiz',
     icon: () => <FaGithub />,
   },
 ];

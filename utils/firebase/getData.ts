@@ -48,7 +48,5 @@ export const getAllDocumentsByPage = async (page: number) => {
     data.push(doc.data());
   });
 
-  console.log(data);
-
   return data;
 };

@@ -83,14 +83,14 @@ const ButtonGroup = () => {
   return (
     <div className='hero__buttons'>
       <motion.a
-        href='#'
+        href='#projects'
         className='button'
         variants={heroVariants}
       >
         My Projects
       </motion.a>
       <motion.a
-        href='#'
+        href='#contact'
         className='button'
         variants={heroVariants}
       >
