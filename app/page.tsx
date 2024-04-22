@@ -13,16 +13,9 @@ export default function Home() {
     <>
       <SubmitAlert />
       <header className={styles.header}>
-        <Navbar />
-      </header>
-      <main className={styles.main}>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      </header>
+      <main className={styles.main}></main>
     </>
   );
 }

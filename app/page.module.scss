@@ -1,6 +1,10 @@
+@import './variables.scss';
+
 .header {
-  height: max-content;
-  scroll-snap-align: center;
+  @media (min-width: $breakpoint-md) {
+    max-width: $maxwidth-md;
+  }
+  margin: 0 auto;
 }
 
 .main {

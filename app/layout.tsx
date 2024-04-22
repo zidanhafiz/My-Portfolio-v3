@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.scss';
-import { inter } from '@/utils/fonts';
+import { inter, poppins } from '@/utils/fonts';
 import ModalProvider from '@/context/showModal';
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <ModalProvider>{children}</ModalProvider>
       </body>
     </html>
