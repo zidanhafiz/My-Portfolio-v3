@@ -1,19 +1,20 @@
 import Link from 'next/link';
-import './footer.scss';
+import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer>
-      <section className='footer__container'>
-        <span>
-          Made with ❤️ by{' '}
+    <footer className={styles.footer}>
+      <section>
+        <p>
+          &copy;{' '}
           <Link
             href='/'
-            className='footer__link'
+            className={styles.link}
           >
-            Zidan
-          </Link>
-        </span>
+            Zidan Hafiz Rapiyani,
+          </Link>{' '}
+          2024 All rights reserved
+        </p>
       </section>
     </footer>
   );

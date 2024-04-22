@@ -5,6 +5,7 @@ import ModalProvider from '@/context/showModal';
 import Hero from './components/Hero/Hero';
 import Navbar from '@/components/Navbar/Navbar';
 import SubmitAlert from '@/components/SubmitAlert/SubmitAlert';
+import Footer from './components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Zidan Hafiz Rapiyani | Portfolio',
@@ -44,6 +45,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main>{children}</main>
+          <Footer />
         </ModalProvider>
       </body>
     </html>
