@@ -70,7 +70,7 @@ export const database: Skills[] = [
   },
 ];
 
-export const getAllSkills = () => {
+const getAllSkills = () => {
   const skills: Skills[] = [];
 
   proLang.map((lang) => skills.push(lang));
@@ -79,3 +79,5 @@ export const getAllSkills = () => {
 
   return skills;
 };
+
+export const skills = getAllSkills();

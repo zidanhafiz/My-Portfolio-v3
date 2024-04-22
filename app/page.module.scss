@@ -1,13 +1,13 @@
 @import './variables.scss';
 
-.header {
-  @media (min-width: $breakpoint-md) {
-    max-width: $maxwidth-md;
+.about {
+  h3 {
+    font-size: 32px;
+    margin-bottom: 1rem;
   }
-  margin: 0 auto;
-  padding: 4rem 1rem;
-}
-
-.main {
-  color: #fff;
+  p {
+    text-align: justify;
+    line-height: 1.6rem;
+    margin-bottom: 4rem;
+  }
 }

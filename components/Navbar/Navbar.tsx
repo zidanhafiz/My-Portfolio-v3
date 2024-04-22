@@ -16,11 +16,11 @@ const navlist: Navlist[] = [
   },
   {
     name: 'Skills',
-    link: '#skills',
+    link: '/skills',
   },
   {
     name: 'Projects',
-    link: '#projects',
+    link: '/projects',
   },
 ];
 

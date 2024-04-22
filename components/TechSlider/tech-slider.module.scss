@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  font-size: 32px;
+  opacity: 0.6;
+  display: flex;
+  gap: 2rem;
+
+  .tech-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

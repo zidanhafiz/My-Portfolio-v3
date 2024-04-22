@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.scss';
-import { inter, poppins } from '@/utils/fonts';
+import { poppins } from '@/utils/fonts';
 import ModalProvider from '@/context/showModal';
+import Hero from './components/Hero/Hero';
+import Navbar from '@/components/Navbar/Navbar';
+import SubmitAlert from '@/components/SubmitAlert/SubmitAlert';
 
 export const metadata: Metadata = {
   title: 'Zidan Hafiz Rapiyani | Portfolio',
@@ -34,7 +37,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={poppins.className}>
-        <ModalProvider>{children}</ModalProvider>
+        <ModalProvider>
+          <SubmitAlert />
+          <header>
+            <Hero />
+            <Navbar />
+          </header>
+          <main>{children}</main>
+        </ModalProvider>
       </body>
     </html>
   );
