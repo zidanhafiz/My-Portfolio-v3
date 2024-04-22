@@ -1,8 +1,9 @@
 'use client';
 import Link from 'next/link';
 import styles from './navbar.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 type Navlist = {
   name: string;
@@ -25,7 +26,8 @@ const navlist: Navlist[] = [
 ];
 
 const Navbar = () => {
-  const [selectedTab, setSelectedTab] = useState('About');
+  const pathName = usePathname();
+  const [selectedTab, setSelectedTab] = useState(pathName);
 
   return (
     <nav className={styles.navbar}>
@@ -35,10 +37,10 @@ const Navbar = () => {
             <Link
               className={styles.link}
               href={list.link}
-              onClick={() => setSelectedTab(list.name)}
+              onClick={() => setSelectedTab(list.link)}
             >
               {list.name}
-              {list.name === selectedTab ? (
+              {list.link === selectedTab ? (
                 <motion.div
                   className={styles.underline}
                   layoutId='underline'

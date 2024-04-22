@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.skills {
+  margin-top: 1rem;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.3rem;
+    column-gap: 3rem;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 6rem;
+    }
+
+    li {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      list-style: none;
+    }
+  }
+}

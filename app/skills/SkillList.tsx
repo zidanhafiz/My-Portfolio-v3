@@ -53,6 +53,10 @@ export const framework: Skills[] = [
     name: 'Express JS',
     icon: () => <Icon icon='skill-icons:expressjs-light' />,
   },
+  {
+    name: 'Adonis JS',
+    icon: () => <Icon icon='skill-icons:adonis' />,
+  },
 ];
 
 export const database: Skills[] = [
@@ -61,12 +65,16 @@ export const database: Skills[] = [
     icon: () => <Icon icon='logos:postgresql' />,
   },
   {
+    name: 'MongoDB',
+    icon: () => <Icon icon='skill-icons:mongodb' />,
+  },
+  {
     name: 'Firebase',
     icon: () => <Icon icon='logos:firebase' />,
   },
   {
     name: 'Supabase',
-    icon: () => <Icon icon='logos:supabase-icon' />,
+    icon: () => <Icon icon='devicon:supabase' />,
   },
 ];
 
