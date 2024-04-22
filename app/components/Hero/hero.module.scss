@@ -1,8 +1,7 @@
 @import '../../variables';
 
 .hero {
-  padding: 4rem 1rem 2rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;

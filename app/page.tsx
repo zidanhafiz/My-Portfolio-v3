@@ -14,6 +14,7 @@ export default function Home() {
       <SubmitAlert />
       <header className={styles.header}>
         <Hero />
+        <Navbar />
       </header>
       <main className={styles.main}></main>
     </>
