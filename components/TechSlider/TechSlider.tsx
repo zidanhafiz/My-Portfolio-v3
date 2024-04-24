@@ -93,7 +93,7 @@ export const TechSlider = () => {
 };
 
 const Slider = ({ children }: { children: ReactNode }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {

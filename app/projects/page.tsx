@@ -14,7 +14,7 @@ const Projects = () => {
     setLoading(true);
     getAllDocuments()
       .then((res) => {
-        setData(res.data);
+        setData(res);
         setLoading(false);
       })
       .catch((err) => {
