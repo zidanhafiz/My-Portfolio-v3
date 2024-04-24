@@ -1,33 +1,34 @@
+import { DocumentData } from 'firebase/firestore';
 import Image from 'next/image';
-import './card.scss';
+import React from 'react';
 import { IoCodeSlash } from 'react-icons/io5';
 import { MdOpenInNew } from 'react-icons/md';
-import { DocumentData } from 'firebase/firestore';
-import { Variants, motion } from 'framer-motion';
+import styles from './card.module.scss';
 
-const Card = ({ data, variants }: { data: DocumentData; variants?: Variants }) => {
+type CardProps = {
+  data: DocumentData;
+};
+
+const Card = ({ data }: CardProps) => {
   const { imgSrc, title, description, sourceCode, link } = data;
 
   return (
-    <motion.div
-      className='card'
-      variants={variants}
-    >
-      <div className='card__img-container'>
+    <div className={styles.card}>
+      <div className={styles['card-img']}>
         <Image
-          className='card__img'
+          className={styles.img}
           src={imgSrc}
           width={1000}
           height={1000}
           alt={title}
         />
       </div>
-      <div className='card__desc'>
+      <div className={styles['card-main']}>
         <div>
           <h3>{title}</h3>
           <p>{description}</p>
         </div>
-        <div className='card__btn--group'>
+        <div className={styles['card-btn-group']}>
           {sourceCode && (
             <a
               href={sourceCode}
@@ -45,7 +46,7 @@ const Card = ({ data, variants }: { data: DocumentData; variants?: Variants }) =
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

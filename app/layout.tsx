@@ -7,6 +7,9 @@ import Navbar from '@/components/Navbar/Navbar';
 import SubmitAlert from '@/components/SubmitAlert/SubmitAlert';
 import Footer from './components/Footer/Footer';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 export const metadata: Metadata = {
   title: 'Zidan Hafiz Rapiyani | Portfolio',
   description: `Explore my personal portfolio website to discover my projects, skills, and experience as a web developer. Learn about my work in frontend and backend development using Next.js, React.js, Express.js, PostgreSQL, Firebase, and Supabase. Let's connect and discuss how I can help bring your ideas to life!`,

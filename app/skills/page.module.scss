@@ -7,10 +7,12 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 1.3rem;
     column-gap: 3rem;
+    justify-items: center;
 
     @media (min-width: $breakpoint-md) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       column-gap: 6rem;
+      justify-items: start;
     }
 
     li {

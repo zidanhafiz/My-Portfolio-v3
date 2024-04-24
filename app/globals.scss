@@ -29,6 +29,7 @@ header {
 }
 
 main {
+  width: 100%;
   max-width: 100vw;
   padding: 2rem 1rem;
   margin: 0 auto;
@@ -43,4 +44,9 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li.slick-active {
+  opacity: 1 !important;
+  box-shadow: 0 0 16px 2px #fff;
 }

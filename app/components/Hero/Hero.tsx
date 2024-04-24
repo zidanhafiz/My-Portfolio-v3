@@ -39,7 +39,7 @@ const Hero = () => {
         >
           See My CV
         </a>
-        <a href='#contact'>Contact Me</a>
+        <a href='/contact'>Contact Me</a>
       </div>
     </div>
   );
