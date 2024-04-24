@@ -4,15 +4,35 @@ import { DocumentData } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import Carousel from '@/components/Carousel/Carousel';
+import Skeleton from '@/components/Skeleton/Skeleton';
 
 const Projects = () => {
   const [data, setData] = useState<DocumentData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setLoading(true);
     getAllDocuments()
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setData(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.projects}>
+        <div className={styles.skeletons}>
+          <Skeleton />
+          <Skeleton />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.projects}>

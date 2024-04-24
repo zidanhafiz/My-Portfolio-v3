@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.projects {
+  .skeletons {
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

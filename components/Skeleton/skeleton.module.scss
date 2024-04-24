@@ -1,0 +1,10 @@
+@import '../../app/variables.scss';
+
+.skeleton {
+  width: 100%;
+  height: 400;
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 600px;
+  }
+}
