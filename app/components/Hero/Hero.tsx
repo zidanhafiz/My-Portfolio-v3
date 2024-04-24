@@ -5,6 +5,7 @@ import { righteous } from '@/utils/fonts';
 import { sosmedList } from './list';
 import { useEffect, useState } from 'react';
 import { getResume } from '@/utils/firebase/getResume';
+import Link from 'next/link';
 
 const Hero = () => {
   const [resume, setResume] = useState<string>('');
@@ -39,7 +40,7 @@ const Hero = () => {
         >
           See My CV
         </a>
-        <a href='/contact'>Contact Me</a>
+        <Link href='/contact'>Contact Me</Link>
       </div>
     </div>
   );

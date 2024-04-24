@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import styles from './navbar.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -40,7 +40,7 @@ const Navbar = () => {
               onClick={() => setSelectedTab(list.link)}
             >
               {list.name}
-              {list.link === selectedTab ? (
+              {pathName !== '/contact' && list.link === selectedTab ? (
                 <motion.div
                   className={styles.underline}
                   layoutId='underline'

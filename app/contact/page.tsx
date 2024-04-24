@@ -1,16 +1,31 @@
 'use client';
+import styles from './page.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import './form.scss';
 import { RiSendPlaneFill } from 'react-icons/ri';
-import { Variants, motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import emailjs from '@emailjs/browser';
 import { useModal } from '@/context/showModal';
-import { inter } from '@/utils/fonts';
+import { inter, righteous } from '@/utils/fonts';
 
-const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID_EMAIL || 's';
-const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID_EMAIL || 's';
-const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY_EMAIL || 's';
+import { FaWhatsapp } from 'react-icons/fa';
+import { MdOutlineEmail } from 'react-icons/md';
+
+const contactList = [
+  {
+    name: 'Whatsapp',
+    link: 'https://wa.me/6285333416372',
+    icon: () => <FaWhatsapp />,
+  },
+  {
+    name: 'Email',
+    link: 'mailto:hrofiyani@gmail.com',
+    icon: () => <MdOutlineEmail />,
+  },
+];
+
+const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID_EMAIL as string;
+const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID_EMAIL as string;
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY_EMAIL as string;
 
 type Input = {
   name: string;
@@ -18,7 +33,7 @@ type Input = {
   message: string;
 };
 
-const Form = ({ variants }: { variants: Variants }) => {
+const Contact = () => {
   const {
     register,
     handleSubmit,
@@ -41,16 +56,30 @@ const Form = ({ variants }: { variants: Variants }) => {
   };
 
   return (
-    <div className='form__container'>
-      <motion.form
-        className='form'
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <motion.input
-          className='form__input-name'
+    <div className={styles['contact']}>
+      <h2 className={righteous.className}>Contact Me</h2>
+      <div className={styles['contact-list']}>
+        {contactList.map((list) => (
+          <a
+            key={list.name}
+            className={styles['list']}
+            href={list.link}
+            target='_blank'
+          >
+            {list.icon()}
+            <span>{list.name}</span>
+          </a>
+        ))}
+      </div>
+      <div className={styles['separator']}>
+        <div></div>
+        <span> or </span>
+        <div></div>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
           type='text'
           placeholder='Your Name'
-          variants={variants}
           disabled={isSubmitting}
           {...register('name', {
             required: 'Your name is required',
@@ -69,11 +98,9 @@ const Form = ({ variants }: { variants: Variants }) => {
           })}
         />
         {errors.name && <ErrorMsg>{errors.name?.message}</ErrorMsg>}
-        <motion.input
-          className='form__input-email'
+        <input
           type='email'
           placeholder='Your Email Address'
-          variants={variants}
           disabled={isSubmitting}
           {...register('email', {
             required: 'Your email is required',
@@ -84,10 +111,9 @@ const Form = ({ variants }: { variants: Variants }) => {
           })}
         />
         {errors.email && <ErrorMsg>{errors.email?.message}</ErrorMsg>}
-        <motion.textarea
-          className={`${inter.className} form__input-message`}
+        <textarea
+          className={inter.className}
           placeholder='Your Message'
-          variants={variants}
           disabled={isSubmitting}
           {...register('message', {
             required: 'Message is required',
@@ -102,9 +128,8 @@ const Form = ({ variants }: { variants: Variants }) => {
           })}
         />
         {errors.message && <ErrorMsg>{errors.message?.message}</ErrorMsg>}
-        <motion.button
+        <button
           type='submit'
-          variants={variants}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -115,14 +140,14 @@ const Form = ({ variants }: { variants: Variants }) => {
               Send
             </>
           )}
-        </motion.button>
-      </motion.form>
+        </button>
+      </form>
     </div>
   );
 };
 
 const ErrorMsg = ({ children }: { children: ReactNode }) => {
-  return <span className='error-message'>{children}!</span>;
+  return <span className={styles['err-message']}>{children}!</span>;
 };
 
-export default Form;
+export default Contact;
