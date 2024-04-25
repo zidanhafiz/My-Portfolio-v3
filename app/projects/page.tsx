@@ -9,6 +9,7 @@ import Skeleton from '@/components/Skeleton/Skeleton';
 const Projects = () => {
   const [data, setData] = useState<DocumentData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     setLoading(true);
@@ -16,14 +17,17 @@ const Projects = () => {
       .then((res) => {
         setData(res);
         setLoading(false);
+        setError(false);
       })
       .catch((err) => {
         console.error(err);
         setLoading(false);
+        setError(true);
       });
   }, []);
 
   if (loading) {
+    if (error) return <p className={styles['error-msg']}>Something went wrong!</p>;
     return (
       <div className={styles.projects}>
         <div className={styles.skeletons}>
@@ -34,6 +38,7 @@ const Projects = () => {
     );
   }
 
+  if (error) return <p className={styles['error-msg']}>Something went wrong!</p>;
   return (
     <div className={styles.projects}>
       <Carousel data={data} />

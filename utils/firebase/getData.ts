@@ -2,13 +2,21 @@ import { DocumentData, collection, getDocs, orderBy, query } from 'firebase/fire
 import { db } from './firebase';
 
 export const getAllDocuments = async () => {
-  const data: DocumentData[] = [];
-  const queryAll = query(collection(db, 'projects'), orderBy('order'));
-  const querySnapshot = await getDocs(queryAll);
+  try {
+    const data: DocumentData[] = [];
+    const queryAll = query(collection(db, 'projects'), orderBy('order'));
+    const querySnapshot = await getDocs(queryAll);
 
-  querySnapshot.forEach((doc) => {
-    data.push(doc.data());
-  });
+    if (querySnapshot.docs.length === 0) {
+      throw new Error('Data not found!');
+    }
 
-  return data;
+    querySnapshot.forEach((doc) => {
+      data.push(doc.data());
+    });
+
+    return data;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
 };

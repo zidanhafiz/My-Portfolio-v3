@@ -147,7 +147,7 @@ const Contact = () => {
 };
 
 const ErrorMsg = ({ children }: { children: ReactNode }) => {
-  return <span className={styles['err-message']}>{children}!</span>;
+  return <span className={styles['error-message']}>{children}!</span>;
 };
 
 export default Contact;

@@ -21,25 +21,30 @@ const Hero = () => {
       id='home'
       className={styles.hero}
     >
-      <Image
-        className={styles.image}
-        src='/zidan-img.jpg'
-        width={300}
-        height={300}
-        alt='zidan'
-      />
+      <Link
+        className={styles['img-link']}
+        href='/zidan-img.jpg'
+      >
+        <Image
+          className={styles.image}
+          src='/zidan-img.jpg'
+          width={300}
+          height={300}
+          alt='zidan'
+        />
+      </Link>
       <div className={styles.right}>
         <h1 className={righteous.className}>ZIDAN HAFIZ RAPIYANI</h1>
         <p>Fullstack Developer</p>
         <SosmedList />
       </div>
       <div className={styles['buttons-group']}>
-        <a
+        <Link
           href={resume}
           target='_blank'
         >
           See My CV
-        </a>
+        </Link>
         <Link href='/contact'>Contact Me</Link>
       </div>
     </div>
@@ -50,13 +55,13 @@ const SosmedList = () => {
   return (
     <div className={styles.sosmed}>
       {sosmedList.map((list, i) => (
-        <a
+        <Link
           key={i}
           href={list.link}
           target='_blank'
         >
           {list.icon()}
-        </a>
+        </Link>
       ))}
     </div>
   );

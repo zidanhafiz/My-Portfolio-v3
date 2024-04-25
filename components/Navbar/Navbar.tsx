@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import styles from './navbar.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -28,6 +28,10 @@ const navlist: Navlist[] = [
 const Navbar = () => {
   const pathName = usePathname();
   const [selectedTab, setSelectedTab] = useState(pathName);
+
+  useEffect(() => {
+    setSelectedTab(pathName);
+  }, [pathName]);
 
   return (
     <nav className={styles.navbar}>
